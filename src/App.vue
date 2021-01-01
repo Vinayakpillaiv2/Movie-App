@@ -38,7 +38,7 @@
           .then(jsonResponse => {
             state.movies = jsonResponse.results;
             state.loading = false;
-          }).catch(error => console.log(error));
+          });
       });
 
       return {

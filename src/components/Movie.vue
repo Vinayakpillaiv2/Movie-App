@@ -23,7 +23,6 @@
     name: "Movie",
     props: ['movie'],
     setup({ movie }) {
-        console.log(movie)
       const imgsrc = computed(() => `https://image.tmdb.org/t/p/w500/${movie.poster_path}`);
       return { imgsrc };
     }

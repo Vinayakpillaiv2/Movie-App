@@ -37,6 +37,8 @@
   margin-right: 135px;
   border-radius: 20px;
   margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 

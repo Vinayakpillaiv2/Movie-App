@@ -37,7 +37,6 @@
           .then(response => response.json())
           .then(jsonResponse => {
             state.movies = jsonResponse.results;
-            console.log(state.movies);
             state.loading = false;
           });
       });

@@ -31,7 +31,7 @@
       });
 
       watch(() => {
-         const MOVIE_API_URL = `http://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${state.search}`;
+         const MOVIE_API_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${state.search}`;
 
         fetch(MOVIE_API_URL)
           .then(response => response.json())

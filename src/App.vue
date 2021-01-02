@@ -10,13 +10,11 @@
 </template>
 
 <script>
-  //import { reactive, watch } from '@vue/composition-api';
   import Header from './components/Header.vue';
   import Search from './components/Search.vue';
   import Movie from './components/Movie.vue';
   import { useApi } from './api/movie-api';
 
-   //const API_KEY = '8a701380ab3802a262124a6d40864c85';
 
   export default {
     name: 'app',

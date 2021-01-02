@@ -10,12 +10,13 @@
 </template>
 
 <script>
-  import { reactive, watch } from '@vue/composition-api';
+  //import { reactive, watch } from '@vue/composition-api';
   import Header from './components/Header.vue';
   import Search from './components/Search.vue';
   import Movie from './components/Movie.vue';
+  import { useApi } from './api/movie-api';
 
-   const API_KEY = '8a701380ab3802a262124a6d40864c85';
+   //const API_KEY = '8a701380ab3802a262124a6d40864c85';
 
   export default {
     name: 'app',
@@ -23,28 +24,11 @@
       Header, Search, Movie
     },
     setup() {
-      const state = reactive({
-        search: 'Jurassic Park',
-        loading: true,
-        movies: [],
-        errorMessage: null
-      });
-
-      watch(() => {
-         const MOVIE_API_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${state.search}`;
-
-        fetch(MOVIE_API_URL)
-          .then(response => response.json())
-          .then(jsonResponse => {
-            state.movies = jsonResponse.results;
-            state.loading = false;
-          });
-      });
+      const state = useApi();
 
       return {
         state,
         handleSearch(searchTerm) {
-          state.loading = true;
           state.search = searchTerm;
         }
       };
